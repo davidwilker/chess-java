@@ -9,7 +9,7 @@ public class ChessPosition {
 	private int row;
 	
 	public ChessPosition(char column, int row) {
-		if(column < 'A' || column > 'H' || row < 1 || row > 8) {
+		if(column < 'a' || column > 'h' || row < 1 || row > 8) {
 			throw new ChessException("Erro instanciando ChessPosition. Valido de A1 até H8.");
 		}
 		this.column = column;
@@ -25,10 +25,10 @@ public class ChessPosition {
 	}
 	
 	protected Position toPosition() {
-		return new Position(8- row, column - 'A');
+		return new Position(8- row, column - 'a');
 	}
 	public static ChessPosition fromPosition(Position position) {
-		return new ChessPosition((char)('A' - position.getColumn()), 8 - position.getRow());
+		return new ChessPosition((char)('a' - position.getColumn()), 8 - position.getRow());
 	}
 	
 	public String toString() {
