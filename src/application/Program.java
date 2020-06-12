@@ -14,25 +14,25 @@ public class Program {
 		// TODO Auto-generated method stub
 				
 		Scanner sc = new Scanner(System.in);
-		ChessMath chessMath = new ChessMath();
+		ChessMath chessMatch = new ChessMath();
 		
 		while(true) {
 			try {
 				UI.clearScreen();
-				UI.printBoard(chessMath.getPieces());
-				System.out.println("\n");
+				UI.printMatch(chessMatch);
+				System.out.println();
 				System.out.print("Source: ");
 				ChessPosition source = UI.readChessPosition(sc);
 				
-				boolean [][] possibleMoves = chessMath.possibleMoves(source);
+				boolean [][] possibleMoves = chessMatch.possibleMoves(source);
 				UI.clearScreen();
-				UI.printBoard(chessMath.getPieces(), possibleMoves);
+				UI.printBoard(chessMatch.getPieces(), possibleMoves);
 				
 				System.out.println();
 				System.out.print("\nTarget: ");
 				ChessPosition target = UI.readChessPosition(sc);
 				
-				ChessPiece capturedPiece = chessMath.performChessMove(source, target);
+				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
 			}
 			catch (ChessException e) {
 				System.out.println(e.getMessage());
