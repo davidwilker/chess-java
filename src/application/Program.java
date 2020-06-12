@@ -29,7 +29,7 @@ public class Program {
 				UI.printBoard(chessMath.getPieces(), possibleMoves);
 				
 				System.out.println();
-				System.out.print("Target: ");
+				System.out.print("\nTarget: ");
 				ChessPosition target = UI.readChessPosition(sc);
 				
 				ChessPiece capturedPiece = chessMath.performChessMove(source, target);
